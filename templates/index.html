@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTSNAP ARCHIVE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <script src="https://cdn.tiny.cloud/1/2ze0oe42wmtznjpfj822w3j0011xml47s17mp7p7gn6zgayl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>EVENTSNAP_ARCHIVE</h1>
+
+        <form id="eventForm" method="POST" enctype="multipart/form-data">
+            <label>University Name:</label>
+            <input type="text" name="univ_name" placeholder="Enter UNIV name" required><br>
+
+            <label>College Name:</label>
+            <input type="text" name="college_name" placeholder="Enter College name" required><br>
+
+            <label for="dropdown">Department Name:</label>
+            <select id="dropdown" name="dropdown">
+                <option value="">--Select an option--</option>
+                <option value="Department of Computer Applications">Department of Computer Applications</option>
+                <option value="Department of Computer Science">Department of Computer Science</option>
+            </select><br>
+
+            <label for="event_type">Event Type:</label>
+            <select id="event_type" name="event_type">
+                <option value="">--Select an option--</option>
+                <option value="FDP Programme">FDP Programme</option>
+                <option value="Alumni Connect">Alumni Connect</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Others">Others</option>
+            </select><br>
+
+            <label>Event Title:</label>
+            <input type="text" name="event_title" placeholder="Enter event title" required><br>
+
+            <label>Event Date:</label>
+            <input type="date" name="event_date" required><br>
+
+            <label>Venue:</label>
+            <input type="text" name="event_venue" placeholder="Enter venue" required><br>
+
+            <label>Participant:</label>
+            <input type="text" name="participant" placeholder="Enter participant name" required><br>
+
+            <label>Resource Link (Optional):</label>
+            <input type="text" name="resource" placeholder="Enter participant resource link"><br>
+
+            <label>Participant Count:</label>
+            <input type="text" name="participant_count" min="1" placeholder="Enter number of participants" required><br>
+
+            <label for="event_description">About Event:</label>
+            <textarea id="event_description" name="event_description" placeholder="Describe the event" required></textarea><br>
+
+            <label>Invitation Image:</label>
+            <input type="file" name="invitation_image" accept=".jpg,.jpeg,.png"><br>
+
+            <label for="photos">Photos (Maximum 4 images):</label>
+            <input type="file" name="photos[]" id="photos" multiple accept=".jpg,.jpeg,.png" onchange="validateFileCount()" required><br>
+            <span id="file-error" class="error"></span>
+
+            <label for="photo_desc">Description for Photos:</label>
+            <input type="text" name="photo_desc" id="photo_desc" placeholder="Enter description for photos" oninput="validateDescriptionMatch()" required>
+            <span id="desc-error" class="error"></span>
+            <br>
+
+            <input type="submit" value="Submit" onclick="validateDescriptionMatch()">
+        </form>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

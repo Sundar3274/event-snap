@@ -1,0 +1,50 @@
+body {
+    background: linear-gradient(135deg, rgba(255, 158, 158, 0.85), rgba(250, 208, 196, 0.85));
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    backdrop-filter: blur(2px);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff758c;
+    color: white;
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff5470;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(255, 87, 112, 0.4);
+}
