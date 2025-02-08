@@ -1,2 +1,1 @@
 python==3.10
-sys_platform == "win32" and "pywin32==308"
