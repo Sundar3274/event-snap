@@ -345,8 +345,15 @@ def upload_to_drive(file_name, file_path):
     except Exception as e:
         print(f"An error occurred while uploading to Google Drive: {e}")
         return None
+     
+@app.route("/healthz")
+def health_check():
+    return "OK", 200  # Must return status 200
+
 
 if __name__ == '__main__':
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=10000)
     # Ensure the upload folder exists
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
