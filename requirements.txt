@@ -8,3 +8,4 @@ google_api_python_client==2.144.0
 protobuf==5.29.3
 python-dotenv==1.0.1
 xhtml2pdf==0.2.16
+waitress==3.0.2
